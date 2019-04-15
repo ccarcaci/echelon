@@ -7,6 +7,11 @@ const responseFile = process.argv[4];
 var responseContent = "";
 var contentLength = 0;
 
+if(port === undefined) {
+  console.log("Port undefined, pass as first param")
+  return
+}
+
 console.log(`Log http request incoming into port: ${port} to file ${outputFile}`);
 
 net.createServer(socket =>
